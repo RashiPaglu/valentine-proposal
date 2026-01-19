@@ -5,3 +5,8 @@ node_modules/
 .vscode/
 *.swp
 *.swo
+
+# Private Images - Keep locally only
+Rashi*.jpeg
+Rashi*.jpg
+Rashi*.png
