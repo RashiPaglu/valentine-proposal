@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? - For Rashi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div id="hearts-container" class="hearts-container"></div>
+
+    <!-- Page 1: Valentine Question -->
+    <div id="page1" class="page active">
+        <h1>Will you be my Valentine?</h1>
+        <div class="bunny" id="bunny">🐰</div>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <!-- Page 2: Old Letter with Typewriter Message -->
+    <div id="page2" class="page">
+        <h1>I Have Something Special For You...</h1>
+        <button id="openLetterBtn" class="open-letter-btn">Open My Letter 💌</button>
+        <div class="bunny" id="bunny2" style="display: none;">🐰</div>
+        <div id="letterContainer" class="letter-container" style="display: none;">
+            <div class="letter-decoration letter-rose rose-top-left">🌹</div>
+            <div class="letter-decoration letter-rose rose-top-right">🌹</div>
+            <div class="letter-decoration letter-rose rose-bottom-left">🌹</div>
+            <div class="letter-decoration letter-rose rose-bottom-right">🌹</div>
+            <div class="letter-decoration leaf leaf-left">🍃</div>
+            <div class="letter-decoration leaf leaf-right">🍃</div>
+            <div id="message" class="typewriter"></div>
+        </div>
+        <button id="proceedBtn" class="proceed-btn" style="display: none;">Continue to Next Gift 💝</button>
+    </div>
+
+    <!-- Page 3: First Set of Envelopes -->
+    <div id="page3" class="page">
+        <h1>✉️ Open My Love Letters ✉️</h1>
+        <p class="envelope-hint">Click each envelope to reveal a special message...</p>
+        <div class="envelopes-grid">
+            <div class="envelope-card" id="env1" data-letter="1">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">💌</div>
+                        <div class="postmark">To My Love</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter1"></div>
+            </div>
+            
+            <div class="envelope-card" id="env2" data-letter="2">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">🌹</div>
+                        <div class="postmark">With Love</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter2"></div>
+            </div>
+            
+            <div class="envelope-card" id="env3" data-letter="3">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">💝</div>
+                        <div class="postmark">Forever</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter3"></div>
+            </div>
+        </div>
+        <button id="nextBtn3" class="next-letter-btn" style="display: none;">💕 Continue to Next ✨</button>
+    </div>
+
+    <!-- Page 4: Second Set of Envelopes -->
+    <div id="page4" class="page">
+        <h1>✉️ More Messages for You ✉️</h1>
+        <p class="envelope-hint">Continue reading my heart...</p>
+        <div class="envelopes-grid">
+            <div class="envelope-card" id="env4" data-letter="4">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">💖</div>
+                        <div class="postmark">My Heart</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter4"></div>
+            </div>
+            
+            <div class="envelope-card" id="env5" data-letter="5">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">🎁</div>
+                        <div class="postmark">For You</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter5"></div>
+            </div>
+            
+            <div class="envelope-card" id="env6" data-letter="6">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="stamp">✨</div>
+                        <div class="postmark">Together</div>
+                    </div>
+                </div>
+                <div class="envelope-letter" id="letter6"></div>
+            </div>
+        </div>
+        <button id="nextBtn4" class="next-letter-btn" style="display: none;">💍 Will You Marry Me? 💍</button>
+    </div>
+
+    <!-- Page 5: Marriage Proposal -->
+    <div id="page5" class="page">
+        <h1>Rashi, Will You Marry Me?</h1>
+        <p>You've opened all my gifts and read my heart. Now, let's make forever ours. 💍</p>
+        <button id="marryYes">Yes, Forever!</button>
+        <button id="marryNo">No (but I love you anyway)</button>
+        <div id="proposalResult" style="display: none;"></div>
+        
+        <!-- Photo Gallery/Collage -->
+        <div class="photo-gallery" id="photoGallery" style="display: none;">
+            <h2>Our Beautiful Memories Together ✨</h2>
+            <div class="collage-container">
+                <!-- Large main image -->
+                <div class="photo photo-main">
+                    <img src="Rashi1.jpeg" alt="Rashi Photo 1">
+                </div>
+                
+                <!-- Overlapping cluster -->
+                <div class="photo photo-cluster-1">
+                    <img src="Rashi2.jpeg" alt="Rashi Photo 2">
+                </div>
+                
+                <div class="photo photo-cluster-2">
+                    <img src="Rashi3.jpeg" alt="Rashi Photo 3">
+                </div>
+                
+                <!-- Right side images -->
+                <div class="photo photo-right-1">
+                    <img src="Rashi4.jpeg" alt="Rashi Photo 4">
+                </div>
+                
+                <div class="photo photo-right-2">
+                    <img src="Rashi5.jpeg" alt="Rashi Photo 5">
+                </div>
+                
+                <!-- Bottom scattered images -->
+                <div class="photo photo-bottom-1">
+                    <img src="Rashi6.jpeg" alt="Rashi Photo 6">
+                </div>
+                
+                <div class="photo photo-bottom-2">
+                    <img src="Rashi7.jpeg" alt="Rashi Photo 7">
+                </div>
+                
+                <div class="photo photo-bottom-3">
+                    <img src="Rashi8.jpeg" alt="Rashi Photo 8">
+                </div>
+                
+                <!-- Heart decoration in center -->
+                <div class="gallery-heart">💕</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
